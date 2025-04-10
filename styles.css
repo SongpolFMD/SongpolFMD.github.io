@@ -1,0 +1,451 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: rgb(255, 255, 255);
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  padding: 15px 30px;
+  color: white;
+}
+
+.logo img {
+  height: 30px;
+  filter: brightness(0) invert(1);
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.nav-links .dropdown a::after {
+  content: ' ';
+}
+
+.navbar2 {
+  display: flex;
+  justify-content: center;
+  padding: 1px 0;
+  text-align: center;
+}
+
+.navmini {
+  display: flex;
+  gap: 20px; 
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.navmini a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  position: relative;
+  padding: 0 10px;
+}
+
+.navmini a:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 18px;
+  background-color: #000000;
+}
+
+
+.navmini a:hover {
+color: #8b734d;
+}
+
+
+.navmini a.active {
+color: #8b734d;
+font-weight: bold;
+}
+
+.navmini a.active::before {
+content: "";
+position: absolute;
+bottom: -6px;
+left: 0;
+right: 0;
+height: 2px;
+background-color: #8b734d;
+margin: auto;
+width: 100%;
+}
+
+.book-now {
+  background-color: #d1bb87;
+  padding: 10px 20px;
+  border-radius: 0 0 0 0;
+}
+
+.book-now a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.book-now::before {
+  content: url('calendar-icon.png');
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.banner_big {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.banner_big img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+}
+
+
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.overlay-text .main-text {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.overlay-text .sub-text {
+  font-size: 25px;
+  margin-top: 5px;
+  opacity: 0.8;
+}
+
+.attractions {
+  display: flex;
+  justify-content: center;   
+  align-items: center;       
+  flex-direction: column;    
+  height: 23vh;             
+  text-align: center;
+  color: rgb(0, 0, 0);
+  box-sizing: border-box;
+}
+
+.overlay-text2 {
+  max-width: 800px;
+}
+
+.mini-text2 {
+  font-size: 16px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.main-text2 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.sub-text2 {
+  font-size: 16px;
+  color: #000000;
+  line-height: 1.6;
+}
+
+.connaners {
+  width: 100%;
+  height: 300px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.venue {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.venue.reverse {
+  flex-direction: row-reverse;
+}
+
+.venue-text {
+  flex: 1;
+}
+
+.venue-image {
+  flex: 1;
+}
+
+.venue-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+width: 100%;
+max-width: 1200px;
+margin: 0 auto;
+padding: 60px 20px;
+box-sizing: border-box;
+display: flex;
+flex-direction: column;
+gap: 60px;
+}
+
+.venue {
+display: flex;
+align-items: stretch;
+gap: 40px;
+}
+
+.venue.reverse {
+flex-direction: row-reverse;
+}
+
+.venue-text,
+.venue-image {
+flex: 1;
+}
+
+.venue-text {
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.venue-text h3 {
+margin-bottom: 10px;
+font-size: 28px;
+color: #8b734d;
+}
+
+.venue-text p {
+margin-bottom: 10px;
+font-size: 16px;
+line-height: 1.6;
+}
+
+.venue-text a {
+margin-top: 15px;
+display: inline-block;
+color: #d1bb87;
+font-weight: bold;
+text-decoration: none;
+}
+
+.venue-image {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.venue-image img {
+width: 100%;
+height: auto;
+max-height: 300px;
+border-radius: 10px;
+object-fit: cover;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+.slider-wrapper img {
+  width: 100%;
+  flex-shrink: 0;
+}
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 1;
+}
+.arrow.left {
+  left: 10px;
+}
+.arrow.right {
+  right: 10px;
+}
+.venue-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-column {
+  flex: 1 1 300px;
+  margin-bottom: 20px;
+}
+
+.footer-logo {
+  max-width: 180px;
+}
+
+.footer-link {
+  color: #fff;
+  text-decoration: underline;
+}
+
+
+@media screen and (max-width: 380px) {
+.navbar {
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.connaners {
+  margin-top: 3rem;
+}
+
+.container {
+  margin-top: 2rem;
+}
+
+.hamburger {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  background-color: #222;
+  padding: 10px 0;
+  border-top: 1px solid #444;
+  gap: 8px;
+}
+
+.nav-links a {
+  font-size: 16px;
+  padding: 8px 16px;
+  color: white;
+}
+
+.book-now {
+  margin-top: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.banner_big {
+  height: 250px;
+}
+
+.overlay-text {
+  bottom: -200px;
+}
+
+.overlay-text .main-text {
+  font-size: 20px;
+}
+
+.overlay-text .sub-text {
+  font-size: 14px;
+}
+
+.main-text2 {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.sub-text2 {
+  font-size: 13px;
+  padding: 0 10px;
+}
+
+.venue {
+  flex-direction: column;
+  text-align: center;
+  gap: 15px;
+}
+
+.venue.reverse {
+  flex-direction: column;
+}
+
+.venue-text, .venue-image {
+  width: 100%;
+  padding: 0 10px;
+}
+
+.navmini {
+  flex-direction: column;
+  gap: 10px;
+}
+
+.navmini a:not(:last-child)::after {
+  display: none;
+}
+}
+
+.hamburger {
+display: none;
+}
+
+.navbar2 {
+  margin-top: 2rem;
+}

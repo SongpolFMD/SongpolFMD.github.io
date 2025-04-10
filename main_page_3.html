@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ammata Lanta Resort</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <a href="https://www.ammatalanta-resort.com/">
+        <img src="https://www.ammatalanta-resort.com/images/logo.png" alt="Ammata Lanta Resort" /></a>
+    </div>
+  </header>
+
+  <section class="banner_big">
+    <img src="https://ammata-lanta-resort-bangkok.hotelmix.co.th/data/Photos/OriginalPhoto/7723/772365/772365301/Ammata-Lanta-Resort-Bangkok-Exterior.JPEG" alt="">
+    <div class="overlay-text">
+      <div class="main-text">Welcome to Ammata Lanta Resort</div>
+      <div class="sub-text">A luxury escape surrounded by nature</div>
+    </div>
+  </section>
+
+  <section class="connaners">
+    <div class="attractions">
+      <div class="overlay-text2">
+        <div class="mini-text2">Ammata Lanta Resort, Suvarnabhumi</div>
+        <div class="main-text2">Plan Your Trip</div>
+        <div class="sub-text2">
+          Embark on a journey filled with new experiences and discover a variety of attractions — from cultural landmarks and Instagram-worthy spots to family-friendly amusement parks and leading shopping malls. We’ve curated the best destinations to help you plan your perfect trip with ease.
+        </div>
+      </div>
+    </div>
+    <div class="navbar2">
+      <nav class="navmini">
+        <a href="index.html">SHOPPING MALLS AND STORES</a>
+        <a href="main_page_2.html">TOURIST ATTRACTIONS</a>
+        <a href="main_page_3.html" class="active">TEMPLES</a>
+      </nav>
+    </div>
+  </section>
+
+  <div class="container">
+    <!-- Section 1 -->
+    <div class="venue">
+      <div class="venue-text">
+        <h3>Wat Phra Kaew</h3>
+        <p>Wat Phra Kaew is Thailand’s most sacred temple, housing the Emerald Buddha, a revered statue of Buddha. The temple is a masterpiece of Thai architecture and is part of the Grand Palace complex.</p>
+        <p>•	Opening Hours: Daily 8:00 AM - 3:30 PM<br>•	Distance from the Hotel: About 35 km / 45 minutes</p>
+        <a href="https://maps.app.goo.gl/LgPVS2kXk8W4RegW6">OPEN MAP</a>
+      </div>
+      <div class="venue-image">
+        <div class="arrow left">&#10094;</div>
+        <div class="arrow right">&#10095;</div>
+        <div class="slider-wrapper">
+          <img src="">
+          <img src="">
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="venue reverse">
+      <div class="venue-text">
+        <h3>Wat Arun</h3>
+        <p>Wat Arun is one of Bangkok’s most iconic temples, situated along the Chao Phraya River. The temple is famous for its stunning architecture and panoramic views of the river, especially at sunset.</p>
+        <p>•	Opening Hours: Daily 8:00 AM - 5:30 PM<br>•	Distance from the Hotel: About 35 km / 45 minutes</p>
+        <a href="https://maps.app.goo.gl/dX6y39Q23w4Sm1fE6">OPEN MAP</a>
+      </div>
+      <div class="venue-image">
+        <div class="arrow left">&#10094;</div>
+        <div class="arrow right">&#10095;</div>
+        <div class="slider-wrapper">
+          <img src="">
+          <img src="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <img src="https://www.ammatalanta-resort.com/images/logo.png" alt="Ammata Lanta Resort" class="footer-logo">
+      </div>
+      <div class="footer-column">
+        <p>88/5 Moo 7 RachaThewa Bangplee, Samutprakarn, 10540<br>Thailand</p>
+      </div>
+      <div class="footer-column">
+        <p><strong>Call us on :</strong><br>
+          +66 (0)2-175-1888<br>
+          +66 (0)2-175-1727<br>
+          +66 (0)2-175-1728<br>
+          +66 (0)2-175-1729<br>
+          +66 (0) 82-6322-555
+        </p>
+        <p>
+          <a href="#" class="footer-link">BROCHURE</a><br>
+          <a href="#" class="footer-link">FACTSHEET (ENG / CN)</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    document.querySelectorAll('.navmini a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        const scrollY = window.scrollY;
+        sessionStorage.setItem('scrollY', scrollY);
+      });
+    });
+  
+    window.addEventListener('load', () => {
+      const scrollY = sessionStorage.getItem('scrollY');
+      if (scrollY !== null) {
+        window.scrollTo(0, parseInt(scrollY));
+        sessionStorage.removeItem('scrollY');
+      }
+    });
+
+    window.onload = () => {
+      const y = sessionStorage.getItem('scrollY');
+      if (y) window.scrollTo(0, +y);
+    };
+    window.onbeforeunload = () => {
+      sessionStorage.setItem('scrollY', window.scrollY);
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.venue-image').forEach(container => {
+        const wrapper = container.querySelector('.slider-wrapper');
+        const images = wrapper.querySelectorAll('img');
+        let currentIndex = 0;
+
+        const updateSlide = () => {
+          wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+        };
+
+        const leftArrow = container.querySelector('.arrow.left');
+        const rightArrow = container.querySelector('.arrow.right');
+
+        leftArrow.addEventListener('click', () => {
+          if (currentIndex > 0) currentIndex--;
+          updateSlide();
+        });
+
+        rightArrow.addEventListener('click', () => {
+          if (currentIndex < images.length - 1) currentIndex++;
+          updateSlide();
+        });
+      });
+    });
+  </script>
+</body>
+</html>
