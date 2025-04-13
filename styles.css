@@ -374,6 +374,10 @@ body {
     flex-direction: column;
   }
 
+  .venue-text h3, a {
+    text-align: center;
+  }
+
   .banner_big {
     height: 400px;
   }
