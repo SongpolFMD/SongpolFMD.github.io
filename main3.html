@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ammata Lanta Resort</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="headers">
+    <div class="logo">
+      <a href="https://www.ammatalanta-resort.com/">
+        <img src="img\logo\logo.png" alt="Ammata Lanta Resort">
+      </a>
+    </div>
+    <a href="car.html">
+      <button class="book_car">
+        BOOK CAR
+      </button>
+    </a>
+  </header>
+
+  <section class="banner_big">
+    <img src="img/banner_big/1.jpg" alt="">
+    <div class="overlay-text">
+      <div class="main-text">Welcome to Ammata Lanta Resort</div>
+      <div class="sub-text">A luxury escape surrounded by nature</div>
+    </div>
+  </section>
+
+  <section class="connaners">
+    <div class="attractions">
+      <div class="overlay-text2">
+        <div class="mini-text2">Ammata Lanta Resort, Suvarnabhumi</div>
+        <div class="main-text2">Plan Your Trip</div>
+        <div class="sub-text2">
+          Embark on a journey filled with new experiences and discover a variety of attractions — from cultural landmarks and Instagram-worthy spots to family-friendly amusement parks and leading shopping malls. We’ve curated the best destinations to help you plan your perfect trip with ease.
+        </div>
+      </div>
+    </div>
+    <div class="navbar2">
+      <nav class="navmini">
+        <a href="main.html">SHOPPING MALLS AND STORES</a>
+        <a href="main2.html">TOURIST ATTRACTIONS</a>
+        <a href="main3.html" class="active">TEMPLES</a>
+      </nav>
+    </div>
+  </section>
+
+  <div class="container">
+    <!-- Section 1 -->
+    <div class="venue">
+      <div class="venue-text">
+        <h3>玉佛寺（Wat Phra Kaew）</h3>
+        <p>玉佛寺是泰国最神圣的寺庙，供奉着玉佛——一尊备受尊敬的佛像。整座寺庙是泰国建筑艺术的杰作，也是大皇宫建筑群的一部分。</p>
+        <p>• 开放时间：每天 8:00 AM - 3:30 PM<br>• 距离酒店：约36.4公里 / 45分钟</p>
+        <a href="https://maps.app.goo.gl/MmmVNwEF1fztznbA7">OPEN MAP</a>
+      </div>
+      <div class="venue-image">
+        <div class="arrow left">&#10094;</div>
+        <div class="arrow right">&#10095;</div>
+        <div class="slider-wrapper">
+          <img src="img/Section_1_page_3/wrapper/1.jpg">
+          <img src="img/Section_1_page_3/wrapper/2.jpg">
+          <img src="img/Section_1_page_3/wrapper/3.jpg">
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="venue reverse">
+      <div class="venue-text">
+        <h3>黎明寺（Wat Arun）</h3>
+        <p>黎明寺是曼谷最具标志性的寺庙之一，坐落于湄南河畔。寺庙因其华丽的建筑风格和河畔的全景视野而闻名，尤其是在日落时分。</p>
+        <p>• 开放时间：每天 8:00 AM - 5:30 PM<br>• 距离酒店：约40.9公里 / 40分钟</p>
+        <a href="https://maps.app.goo.gl/Ka5g9T5tVoNM2rJd9">OPEN MAP</a>
+      </div>
+      <div class="venue-image">
+        <div class="arrow left">&#10094;</div>
+        <div class="arrow right">&#10095;</div>
+        <div class="slider-wrapper">
+          <img src="img/Section_2_page_3/wrapper/1.jpg">
+          <img src="img/Section_2_page_3/wrapper/2.jpg">
+          <img src="img/Section_2_page_3/wrapper/3.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <img src="img\logo\logo.png" alt="Ammata Lanta Resort" class="footer-logo">
+      </div>
+      <div class="footer-column">
+        <p>88/5 Moo 7 RachaThewa Bangplee, Samutprakarn, 10540<br>Thailand</p>
+      </div>
+      <div class="footer-column">
+        <p><strong>Call us on :</strong><br>
+          +66 (0)2-175-1888<br>
+          +66 (0)2-175-1727<br>
+          +66 (0)2-175-1728<br>
+          +66 (0)2-175-1729<br>
+          +66 (0) 82-6322-555
+        </p>
+        <p>
+          <a href="#" class="footer-link">BROCHURE</a><br>
+          <a href="#" class="footer-link">FACTSHEET (ENG / CN)</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    document.querySelectorAll('.navmini a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        const scrollY = window.scrollY;
+        sessionStorage.setItem('scrollY', scrollY);
+      });
+    });
+  
+    window.addEventListener('load', () => {
+      const scrollY = sessionStorage.getItem('scrollY');
+      if (scrollY !== null) {
+        window.scrollTo(0, parseInt(scrollY));
+        sessionStorage.removeItem('scrollY');
+      }
+    });
+
+    window.onload = () => {
+      const y = sessionStorage.getItem('scrollY');
+      if (y) window.scrollTo(0, +y);
+    };
+    window.onbeforeunload = () => {
+      sessionStorage.setItem('scrollY', window.scrollY);
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.venue-image').forEach(container => {
+        const wrapper = container.querySelector('.slider-wrapper');
+        const images = wrapper.querySelectorAll('img');
+        let currentIndex = 0;
+
+        const updateSlide = () => {
+          wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+        };
+
+        const leftArrow = container.querySelector('.arrow.left');
+        const rightArrow = container.querySelector('.arrow.right');
+
+        leftArrow.addEventListener('click', () => {
+          if (currentIndex > 0) currentIndex--;
+          updateSlide();
+        });
+
+        rightArrow.addEventListener('click', () => {
+          if (currentIndex < images.length - 1) currentIndex++;
+          updateSlide();
+        });
+      });
+    });
+  </script>
+</body>
+</html>
