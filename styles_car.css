@@ -1,0 +1,271 @@
+  .card_cars {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    justify-content: center;
+    max-width: 960px;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+  }
+  
+  .card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 2rem;
+  }
+
+  .bigtextcards h3 {
+    color: #8b734d;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 3.4rem;
+    font-size: 2rem;
+  }
+  
+  .section-title p {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .content {
+    display: flex;
+    gap: 15px;
+  }
+
+  .info-section {
+    margin-top: 2rem;
+    margin-left: 1.5rem;
+  }
+  
+  .image-section img {
+    margin-top: 15px;
+    width: 180px;
+    border-radius: 5px;
+  }
+  
+  .info-section p {
+    margin: 0rem;
+    font-size: 14px;
+  }
+  
+  .icons {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+  }
+  
+  .icons .divider {
+    height: 20px;
+    width: 1px;
+    background-color: #ccc;
+  }
+  
+  hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #ccc;
+    margin-top: 0.7rem;
+  }
+  
+  .car-footer p {
+    font-size: 13px;
+    color: #444;
+  }
+  
+  .car-footer .price {
+    display: inline-flex;          /* เปลี่ยนจาก flex เป็น inline-flex */
+    align-items: baseline;
+    gap: 3px;                      /* ปรับให้ห่างน้อยลง */
+    margin-top: -10px;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: right;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  
+  .car-footer .currency {
+    font-size: 16px;
+    margin-right: 2px;
+  }
+  
+  .car-footer .amount {
+    font-size: 22px;
+    margin: 0;
+  }
+  
+  .car-footer .unit {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .car-footer .price-desc {
+    font-size: 14px;
+    margin-top: -2px;
+    color: #333;
+    text-align: right;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  
+  /* ------------------ RESPONSIVE STYLES ------------------ */
+
+/* จอใหญ่ถึงกลาง (1024px ลงมา) */
+@media (max-width: 1024px) {
+  .card_cars {
+    grid-template-columns: repeat(2, 1fr); /* แถวละ 2 การ์ด */
+    gap: 15px;
+    justify-content: center;
+    padding: 0 15px;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .main-text2 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .section-title p {
+    font-size: 16px;
+  }
+
+  .car-footer .price {
+    font-size: 18px;
+  }
+}
+
+/* จอแท็บเล็ต (768px ลงมา) */
+@media (max-width: 768px) {
+  .card_cars {
+    grid-template-columns: 1fr; /* แถวละ 1 การ์ด */
+    gap: 12px;
+    padding: 0 10px;
+  }
+
+  .card {
+    max-width: 80%;
+    justify-self: center;
+  }
+  
+  .content {
+    flex-direction: column; /* จัดแนวภาพอยู่บน ข้อความอยู่ล่าง */
+    gap: 10px;
+    align-items: center;
+  }
+
+  .image-section img {
+    width: 100%;       /* ขยายเต็มความกว้าง */
+    max-width: 220px;  /* จำกัดขนาด */
+    height: auto;
+  }
+
+  .info-section {
+    margin: 0;
+    text-align: center;
+  }
+
+  .info-section p {
+    font-size: 17px;
+  }
+
+  .icons {
+    justify-content: center;
+    font-size: 13px;
+  }
+
+  .car-footer {
+    text-align: center;
+  }
+
+  .car-footer .price {
+    justify-content: center;
+    font-size: 16px;
+    margin-top: 5px;
+  }
+
+  .car-footer .amount {
+    font-size: 25px;
+  }
+
+  .car-footer .price-desc {
+    font-size: 13px;
+    text-align: center;
+  }
+}
+
+/* มือถือจอเล็ก (480px ลงมา) */
+@media (max-width: 480px) {
+  .card_cars {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 0 8px;
+  }
+
+  .card {
+    max-width: 80%;
+    justify-self: center;
+    padding: 12px;
+    font-size: 17px;
+  }
+
+  .section-title p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .content {
+    flex-direction: column; /* จัดแนวภาพอยู่บน ข้อความอยู่ล่าง */
+    gap: 10px;
+    align-items: center;
+  }
+
+  .image-section img {
+    width: 100%;       /* ขยายเต็มความกว้าง */
+    max-width: 150px;  /* จำกัดขนาด */
+    height: auto;
+  }
+
+  .info-section {
+    margin: 0;
+    text-align: center;
+  }
+
+  .info-section p {
+    font-size: 16px;
+  }
+
+  .icons {
+    justify-content: center;
+    font-size: 13px;
+  }
+
+  .car-footer {
+    text-align: center;
+  }
+
+  .car-footer .price {
+    justify-content: center;
+    font-size: 16px;
+    margin-top: 5px;
+  }
+
+  .car-footer .amount {
+    font-size: 22px;
+  }
+
+  .car-footer .price-desc {
+    font-size: 13px;
+    text-align: center;
+  }
+}
